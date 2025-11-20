@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Velvettemptation | Términos y Condiciones</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    body {
+      color: #f5eef4;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #101526;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Fondo con imagen + degradado */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(9, 11, 24, 0.9), rgba(155, 97, 105, 0.7)),
+        url("Img/descarga\ \(65\)\ \(1\).jpg") center/cover no-repeat fixed;
+      z-index: -2;
+      filter: saturate(1.1);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(244, 164, 196, 0.35), transparent 60%);
+      mix-blend-mode: screen;
+      z-index: -1;
+    }
+
+    .wrapper {
+      width: min(900px, 95vw);
+      background: rgba(10, 12, 25, 0.85);
+      backdrop-filter: blur(16px);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+      padding: 28px 24px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 12px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand span {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #b7a4c6;
+    }
+
+    .brand h1 {
+      font-size: 1.4rem;
+      font-weight: bold;
+      background: linear-gradient(120deg, #f2a7b2, #b58aa8, #9b6169);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: rgba(59, 55, 80, 0.8);
+      color: #f7e7ff;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      white-space: nowrap;
+    }
+
+    .terms-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .intro {
+      font-size: 0.9rem;
+      color: #d4c7de;
+      line-height: 1.6;
+    }
+
+    .terms-box {
+      margin-top: 4px;
+      background: rgba(13, 16, 30, 0.9);
+      border-radius: 18px;
+      padding: 16px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      max-height: 55vh;
+      overflow-y: auto;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .terms-box::-webkit-scrollbar {
+      width: 6px;
+    }
+    .terms-box::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .terms-box::-webkit-scrollbar-thumb {
+      background: rgba(151, 117, 140, 0.8);
+      border-radius: 999px;
+    }
+
+    .terms-box h2 {
+      font-size: 1rem;
+      margin: 10px 0 6px;
+      color: #f3cfdf;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .terms-box p + p {
+      margin-top: 6px;
+    }
+
+    .terms-box strong {
+      color: #f3cfdf;
+      font-weight: bold;
+    }
+
+    .footer-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .note {
+      font-size: 0.78rem;
+      color: #b7a4c6;
+    }
+
+    .btn-primary {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: bold;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #2b2640, #6b4f63, #9b6169);
+      color: #fdf4ff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, filter 0.12s ease-out;
+    }
+
+    .btn-primary span {
+      font-size: 1rem;
+      margin-top: -1px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.75);
+    }
+
+    .btn-primary:active {
+      transform: translateY(1px);
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Botón de música flotante */
+    .music-toggle {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(16, 20, 40, 0.92);
+      color: #f9e6ff;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+      transition: transform 0.1s ease-out, background 0.1s ease-out;
+    }
+
+    .music-toggle:hover {
+      transform: translateY(-1px);
+      background: rgba(31, 35, 65, 0.98);
+    }
+
+    .music-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #ff758f;
+      box-shadow: 0 0 10px rgba(255, 149, 188, 0.9);
+    }
+
+    .music-toggle.off .music-dot {
+      background: #77708c;
+      box-shadow: none;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 7, 20, 0.82);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease-out;
+      z-index: 15;
+    }
+
+    .modal-backdrop.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: radial-gradient(circle at top, #5d4359 0, #1a1729 55%, #100f1c 100%);
+      border-radius: 24px;
+      padding: 20px 22px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      max-width: 420px;
+      width: calc(100% - 40px);
+      text-align: center;
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .modal-card::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(244, 164, 196, 0.38), transparent 60%);
+      top: -120px;
+      left: -60px;
+      opacity: 0.9;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    /* Imagen circular en el modal */
+    .modal-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.8);
+      position: relative;
+      z-index: 1;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .modal-title {
+      margin-top: 14px;
+      font-size: 1.05rem;
+      font-weight: bold;
+      color: #ffe6f2;
+      position: relative;
+      z-index: 1;
+    }
+
+    .modal-text {
+      margin-top: 6px;
+      font-size: 0.85rem;
+      color: #f0d7ff;
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
+    }
+
+    .modal-close {
+      margin-top: 12px;
+      background: transparent;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      color: #fce8ff;
+      font-size: 0.8rem;
+      padding: 6px 16px;
+      cursor: pointer;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .modal-close:hover {
+      background: rgba(17, 18, 33, 0.85);
+    }
+
+    @media (max-width: 600px) {
+      .wrapper {
+        padding: 20px 16px 18px;
+        border-radius: 20px;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .note {
+        order: 2;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Música -->
+  <audio id="bg-music" src="Musica/bon bon Jellyfish Planet (VIVINOS - ALNST Sub ： SUA Part.2).mp3" loop></audio>
+
+  <button class="music-toggle off" id="musicToggle" type="button" aria-pressed="false">
+    <span class="music-dot"></span>
+    <span id="musicLabel">Música: OFF</span>
+  </button>
+
+  <main class="wrapper">
+    <header>
+      <div class="brand">
+        <span>Velvettemptation</span>
+        <h1>Términos y Condiciones de Lotes</h1>
+      </div>
+      <div class="badge">última actualización</div>
+    </header>
+
+    <section class="terms-container">
+      <p class="intro">
+        Antes de participar en los lotes y realizar cualquier pago dentro de Velvettemptation, lee con atención los
+        siguientes Términos y Condiciones. Al aceptar, confirmas que entiendes y respetarás cada punto descrito.
+      </p>
+
+      <div class="terms-box">
+        <h2>¿Cómo pedir en lotes?</h2>
+        <p>
+          Para pedir cualquier producto que desee, escribir <strong>"PIDO"</strong> en el grupo y una admin le dará el
+          pase con <strong>"MARCA"</strong>.
+        </p>
+        <p>
+          El tiempo a esperar es de <strong>3 minutos</strong>; pasado este tiempo, deberá enviar nuevamente "PIDO".
+          No marcar sin que alguna admin le haya dado el pase.
+        </p>
+        <p>
+          Una vez marcado el producto, <strong>no hay oportunidad de CANCELACIÓN/DEVOLUCIÓN</strong>.
+        </p>
+        <p>
+          El producto se puede ceder de manera interna; la persona que marcó se encarga de pagar. Después del pago
+          respectivo, indicar a qué persona fue cedido el producto.
+        </p>
+        <p>
+          Los lotes tienen un tiempo de vida de <strong>3 días</strong>. Pasado ese tiempo, en caso el seller se
+          comunique con nosotros, se preguntará si aún desean el producto. Pedimos paciencia.
+        </p>
+
+        <h2>¿Cómo pagar un producto de un lote?</h2>
+        <p>
+          Cuando se confirma el lote, se etiqueta a la persona que marcó en el grupo de pagos. Enviar la captura del
+          pago al grupo de pagos (con su nombre/sticker), este se encuentra dentro de la comunidad.
+        </p>
+        <p>
+          El plazo para el pago es de <strong>72 horas</strong>. Si pasa ese tiempo, se deberá pagar una mora de
+          <strong>1 sol por día</strong>. En la situación donde la persona tenga varias cosas sin pagar de la misma
+          caja, los productos pasarán a posesión del Go sin derecho a reclamo.
+        </p>
+        <p>
+          El adelanto por el momento es la mitad del monto total, o también se puede cancelar en su totalidad.
+        </p>
+        <p>
+          Ningún producto incluye el envío de China/Corea a Perú, a excepción de productos de <strong>(ALNST)</strong>.
+        </p>
+
+        <h2>Envíos de China/Corea a Perú</h2>
+        <p>
+          Para BL / Anime de China, en caso de photocards, el envío es de <strong>4 soles</strong>. No hay aproximado
+          para los demás productos.
+        </p>
+        <p>
+          Se dará el anuncio para pagar el envío cuando la caja esté completa. Deben estar atentos: solo se indicará
+          un día antes o el mismo día de la fecha de vencimiento de los pagos para las personas que no realicen
+          el pago a tiempo.
+        </p>
+        <p>
+          El tiempo para completar la caja de China es de <strong>aprox. 2 meses</strong> y el envío demora de
+          <strong>15 a 30 días</strong>.
+        </p>
+        <p>
+          No tomamos responsabilidad por el estado del producto; tampoco por daños que ocurran en el transcurso
+          Corea/China &rarr; Perú. Es importante considerar esto al pedir.
+        </p>
+        <p>
+          El viaje puede provocar daños leves que se escapan de nuestras manos; por ello, debe tomarse en cuenta
+          al momento de comprar.
+        </p>
+        <p>
+          Se enviará foto o video siempre y cuando el seller nos brinde este material; igualmente se verifica que
+          el producto se encuentre en buen estado.
+        </p>
+        <p>
+          <strong>No se permite la reventa</strong> de productos que aún no hayan sido entregados. Si se detecta este
+          detalle, se eliminará a la persona de la comunidad y se añadirá a una lista de reportes.
+        </p>
+        <p>
+          No realizado el pago del envío después de la fecha brindada, los productos pasarán a stock.
+        </p>
+
+        <h2>Importante</h2>
+        <p>
+          Si se encuentran personas con reportes de estafas, <em>time waster</em> o mala negociación, se debe indicar
+          a una administradora. Se eliminará a la persona de la comunidad.
+        </p>
+        <p>
+          <strong>No damos devolución</strong> de monto pagado en casos de cambio de opinión o estafas por parte de
+          un seller a pesar de haber verificado el producto. Haremos lo posible por evitar estas situaciones;
+          sin embargo, hay aspectos que no están bajo nuestro control.
+        </p>
+        <p>
+          Agradecemos la confianza y paciencia; así mismo, esperamos que esta sea recíproca, siendo responsables con
+          el pago. Siempre tratamos de responder por completo sus dudas, así que siéntanse con calma para consultar
+          cualquier detalle o pregunta. Esperamos poder ayudarles. ♡
+        </p>
+        <p><strong>ATTE: Velvettemptation</strong></p>
+      </div>
+    </section>
+
+    <div class="footer-actions">
+      <p class="note">
+        Al pulsar “Acepto los T y C” confirmas que has leído y aceptas las condiciones de Velvettemptation.
+      </p>
+      <button class="btn-primary" id="acceptBtn" type="button">
+        <span>✔</span> Acepto los T y C
+      </button>
+    </div>
+  </main>
+
+  <!-- Modal de imagen bonita circular -->
+  <div class="modal-backdrop" id="modal">
+    <div class="modal-card">
+      <img src="Img/WhatsApp Image 2025-08-21 at 7.32.47 PM.jpeg" alt="Gracias por tu confianza" class="modal-image">
+      <h3 class="modal-title">¡Gracias por aceptar! ♡</h3>
+      <p class="modal-text">
+        Tu participación en Velvettemptation nos ayuda a seguir trayendo merch lindo y seguro para todxs.
+        Recuerda revisar siempre los anuncios y fechas de pago.
+      </p>
+      <button class="modal-close" id="closeModal" type="button">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    // Botón Acepto: muestra el modal
+    const acceptBtn = document.getElementById("acceptBtn");
+    const modal = document.getElementById("modal");
+    const closeModal = document.getElementById("closeModal");
+
+    acceptBtn.addEventListener("click", () => {
+      modal.classList.add("show");
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.remove("show");
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("show");
+      }
+    });
+
+    // Control de música
+    const music = document.getElementById("bg-music");
+    const musicToggle = document.getElementById("musicToggle");
+    const musicLabel = document.getElementById("musicLabel");
+
+    musicToggle.addEventListener("click", async () => {
+      if (music.paused) {
+        try {
+          await music.play();
+          musicToggle.classList.remove("off");
+          musicLabel.textContent = "Música: ON";
+          musicToggle.setAttribute("aria-pressed", "true");
+        } catch (err) {
+          console.error("No se pudo reproducir la música:", err);
+        }
+      } else {
+        music.pause();
+        musicToggle.classList.add("off");
+        musicLabel.textContent = "Música: OFF";
+        musicToggle.setAttribute("aria-pressed", "false");
+      }
+    });
+  </script>
+</body>
+</html>
